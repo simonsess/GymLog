@@ -22,6 +22,7 @@
 		10E634532AF6661700879322 /* PlannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E634522AF6661700879322 /* PlannerView.swift */; };
 		10E634552AF6665700879322 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E634542AF6665700879322 /* SettingsView.swift */; };
 		10E634582AF68CEF00879322 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E634572AF68CEF00879322 /* Workout.swift */; };
+		10E6345E2AF6B74900879322 /* NewWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E6345D2AF6B74900879322 /* NewWorkoutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		10E634522AF6661700879322 /* PlannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerView.swift; sourceTree = "<group>"; };
 		10E634542AF6665700879322 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		10E634572AF68CEF00879322 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
+		10E6345D2AF6B74900879322 /* NewWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWorkoutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,15 +112,16 @@
 		10E6341A2AF39AB100879322 /* GymLog */ = {
 			isa = PBXGroup;
 			children = (
+				10E634612AF6BD7100879322 /* Settings */,
+				10E634602AF6BD6800879322 /* Planner */,
+				10E6345F2AF6BD5A00879322 /* Overview */,
+				10E6345C2AF6B73100879322 /* NewWorkout */,
 				10E6345B2AF69FA600879322 /* oldModelExample */,
 				10E634562AF68CD400879322 /* Model */,
 				10E634472AF39EDB00879322 /* TabBarController */,
 				10E6341B2AF39AB100879322 /* GymLogApp.swift */,
 				10E634212AF39AB200879322 /* Assets.xcassets */,
 				10E634232AF39AB200879322 /* Preview Content */,
-				10E634502AF665C100879322 /* OverviewView.swift */,
-				10E634522AF6661700879322 /* PlannerView.swift */,
-				10E634542AF6665700879322 /* SettingsView.swift */,
 			);
 			path = GymLog;
 			sourceTree = "<group>";
@@ -173,6 +176,38 @@
 				10E6341F2AF39AB100879322 /* Item.swift */,
 			);
 			path = oldModelExample;
+			sourceTree = "<group>";
+		};
+		10E6345C2AF6B73100879322 /* NewWorkout */ = {
+			isa = PBXGroup;
+			children = (
+				10E6345D2AF6B74900879322 /* NewWorkoutView.swift */,
+			);
+			path = NewWorkout;
+			sourceTree = "<group>";
+		};
+		10E6345F2AF6BD5A00879322 /* Overview */ = {
+			isa = PBXGroup;
+			children = (
+				10E634502AF665C100879322 /* OverviewView.swift */,
+			);
+			path = Overview;
+			sourceTree = "<group>";
+		};
+		10E634602AF6BD6800879322 /* Planner */ = {
+			isa = PBXGroup;
+			children = (
+				10E634522AF6661700879322 /* PlannerView.swift */,
+			);
+			path = Planner;
+			sourceTree = "<group>";
+		};
+		10E634612AF6BD7100879322 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				10E634542AF6665700879322 /* SettingsView.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,6 +349,7 @@
 				10E6341C2AF39AB100879322 /* GymLogApp.swift in Sources */,
 				10E634552AF6665700879322 /* SettingsView.swift in Sources */,
 				10E634512AF665C100879322 /* OverviewView.swift in Sources */,
+				10E6345E2AF6B74900879322 /* NewWorkoutView.swift in Sources */,
 				10E634532AF6661700879322 /* PlannerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

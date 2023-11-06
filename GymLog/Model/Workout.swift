@@ -8,6 +8,7 @@ final class Workout {
     @Relationship(deleteRule: .cascade)
     var exercises: [Exercise] = []
     var created: Date
+    var note: String?
 
     init(timestamp: Date) {
         self.created = timestamp
@@ -21,6 +22,8 @@ final class Exercise {
     var workout: Workout
     @Relationship(deleteRule: .cascade)
     var series: [Series] = []
+    var note: String?
+    var rest: Int = 180
     
     init(workout: Workout) {
         self.workout = workout
@@ -34,6 +37,8 @@ final class Series {
     var exercise: Exercise
     var reps: Int = 0
     var weight: Int = 0
+    var finished: Bool = false
+    var rest: Int = 120
     
     init(exercise: Exercise) {
         self.exercise = exercise

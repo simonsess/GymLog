@@ -1,9 +1,11 @@
 import Foundation
 
-class TabBarViewModel {
-    lazy var tabs: [String] = {
-        []
-    }()
+class TabBarViewModel: ObservableObject {
+    @Published var hideTabBar: Bool
+    
+    init(hideTabBar: Bool) {
+        self.hideTabBar = hideTabBar
+    }
     
 //    private lazy var mapTabItem: TabBarItem = {
 //        TabBarItemView(with: Asset.Assets.iconTabMap.image,

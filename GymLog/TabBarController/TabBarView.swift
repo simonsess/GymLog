@@ -5,34 +5,45 @@ import SwiftData
 
 struct TabBarView: View {
     @Environment(\.modelContext) private var modelContext
+    @ObservedObject var viewModel: TabBarViewModel = TabBarViewModel(hideTabBar: false)
+    
     @State var selectedTab = 0
+    @State private var hideTabBar: Bool = false
     
     var body: some View {
-        ZStack(alignment: .bottom){
-            TabView(selection: $selectedTab) {
-                OverviewView()
-                    .tag(0)
-                PlannerView()
-                    .tag(1)
-                SettingsView()
-                    .tag(2)
-            }
-            
-            ZStack {
-                HStack (spacing: 0) {
-                    ForEach((TabbedItem.allCases), id: \.self){ item in
-                        Button {
-                            selectedTab = item.rawValue
-                        } label: {
-                            TabItem(selectedTab: selectedTab, item: item)
+        NavigationView {
+            ZStack(alignment: .bottom){
+                TabView(selection: $selectedTab) {
+                    
+                    OverviewView(hideTabBar: $hideTabBar)
+                        .tag(0)
+                    
+                    PlannerView()
+                        .tag(1)
+                    SettingsView()
+                        .tag(2)
+                    
+                }
+                
+                VStack {
+                    Spacer()
+                    if !hideTabBar {
+                        HStack (spacing: 0) {
+                            ForEach((TabbedItem.allCases), id: \.self){ item in
+                                Button {
+                                    selectedTab = item.rawValue
+                                } label: {
+                                    TabItem(selectedTab: selectedTab, item: item)
+                                }
+                            }
                         }
+                        .background(.tertiary)
+                        .clipShape(.capsule)
+                        .shadow(color: .gray, radius: 8)
+                        .transition(.move(edge: .bottom).combined(with: .opacity).combined(with: .scale(scale: 0, anchor: .bottom)))
                     }
                 }
-                .background(.tertiary)
-                .clipShape(.capsule)
-                .shadow(color: .gray, radius: 8)
-                .overlay(content: {
-                })
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
         }
     }
